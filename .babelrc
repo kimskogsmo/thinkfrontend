@@ -1,0 +1,38 @@
+﻿{
+  "plugins": [
+    [
+      "@babel/transform-runtime", {
+        "regenerator": true  
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": [ "./src" ],
+        "alias": {
+          "theme": "./src/theme",
+          "assets": "./src/assets/",
+          "webfonts": "./src/assets/webfonts"
+          // "scripts": "./Content/scripts",
+          // "dist": "./out",
+          // "fonts": "./Content/fonts",
+          // "images": "./Content/images",
+          // "helpers": "./Content/scripts/helpers",
+          // "components": "./Content/scripts/components",
+          // "api": "./Content/scripts/api",
+          // "core": "./Content/scripts/core"
+        }
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties"
+    ],
+    [
+      "@babel/plugin-transform-react-jsx", {
+        "pragma": "h",
+        "pragmaFrag": "Fragment"
+      }
+    ]
+  ],
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
