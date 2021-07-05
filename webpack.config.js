@@ -26,7 +26,7 @@ module.exports = {
   // entry files
   mode: 'production',
   entry: {
-      'app': './app.js'
+      'index': './index.js'
   },
     output: {
       publicPath: '/out',
@@ -166,7 +166,7 @@ module.exports = {
     }),
     // inline js
     new ScriptExtHtmlWebpackPlugin({
-      inline: ["app.js"]
+      inline: ["index.js"]
     }),
     // copy assets to dist
     // new CopyWebpackPlugin([{ from: "./source/assets", to: "./" }])
