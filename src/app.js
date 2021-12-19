@@ -1,8 +1,16 @@
-import { Welcome } from './pages/Welcome.js';
-import { Composition } from './layout/Composition.js';
+import { h, Component } from 'preact';
+import logo from './logo.svg';
+import './App.scss';
 
-export const App = (children) => {
-    let app = `<section id="app">${Composition()}</section>`;
+import Footer from './layout/Footer.jsx'
 
-    return app;
+function App() {
+    return (
+        <div className="App">
+            <Header />
+            <Footer />
+        </div>
+    );
 }
+
+export default App;
