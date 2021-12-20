@@ -1,0 +1,41 @@
+.roadmap {
+    background: #e9e9e9;
+    padding: 1rem;
+
+    .article {
+        background: #fff;
+        width: max-content;
+        margin: auto;
+        
+        &:hover{
+            border-color: transparent;
+            background: black;
+            color: white;
+
+            .resource {
+                color: black;
+            }
+        }
+
+        transition: background 0.1s ease-in-out;
+        padding: 0.5rem 2rem;
+        font-weight: bold;
+        border-radius: 1rem;
+        border: 2px solid #777;
+        position: relative;
+        user-select: none;
+        cursor: pointer;
+
+        .resources {
+            position: absolute;
+
+            .resource {
+                background: #fff;
+                font-size: 0.8rem;
+                padding: 0.25rem 0.5rem;
+                border-radius: 1rem;
+                border: 2px solid #777;
+            }
+        }
+    }
+}

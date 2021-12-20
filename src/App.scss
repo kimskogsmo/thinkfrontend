@@ -1,5 +1,21 @@
-.App {
+:root {
+    --header-height: 100px;
+    --header-color: black;
+}
+
+* {
+    // user-select: none;
+
+    &::selection {
+        background: rgba(176, 64, 64, 0.352);
+    }
+}
+
+#root {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 
     .App-logo {
         animation: App-logo-spin infinite 20s linear;

@@ -1,14 +1,33 @@
 {
-  "plugins": [
-        ["@babel/plugin-transform-react-jsx", { "pragma":"h" }],
-        ["@babel/syntax-dynamic-import"],
-  ],
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "modules": false
-      }
-    ]
-  ]
+    "plugins": [
+        [
+            "@babel/plugin-transform-react-jsx",
+            {
+                "pragma": "h"
+            }
+        ],
+        [
+            "@babel/syntax-dynamic-import"
+        ],
+        [
+            "module-resolver",
+            {
+                "root": [
+                    "./src"
+                ],
+                "alias": {
+                    "react": "preact/compat",
+                    "react-dom": "preact/compat",
+                }
+            }
+        ]
+    ],
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "modules": false
+            }
+        ]
+    ],
 }

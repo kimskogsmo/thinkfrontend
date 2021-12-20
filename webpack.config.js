@@ -2,6 +2,7 @@
 
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackModules = require('webpack-modules');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -9,6 +10,19 @@ const config = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'public'),
+    },
+    resolve: {
+        alias: {
+            'react': 'preact-compat',
+            'react-dom': 'preact-compat',
+
+            // Not necessary unless you consume a module using `createClass`
+            'create-react-class': 'preact-compat/lib/create-react-class',
+            // Not necessary unless you consume a module requiring `react-dom-factories`
+            'react-dom-factories': 'preact-compat/lib/react-dom-factories',
+
+            'components': path.resolve(__dirname, './src/components')
+        }
     },
     devServer: {
         static: {
@@ -19,7 +33,7 @@ const config = {
     },
     plugins: [
         new MiniCssExtractPlugin(),
-
+        new WebpackModules(),
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
     ],
