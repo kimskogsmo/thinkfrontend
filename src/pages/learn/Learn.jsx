@@ -1,7 +1,11 @@
 import { h, Fragment } from 'preact'
-import Roadmap from './components/roadmap'
+import RoadmapList from './components/roadmap-list'
 
-export default function Learn() {
+export default function Learn({
+    roadmaps
+  }) {
+    console.log('learn page roadmaps', roadmaps)
+
     return (
         <Fragment>
             <div>
@@ -9,7 +13,12 @@ export default function Learn() {
                 <p>Learn how to think frontend! Follow the roadmap below to start learning.</p>
             </div>
 
-            <Roadmap />
+            <hr />
+
+            <h3>Latest roadmaps</h3>
+            <RoadmapList roadmaps={roadmaps} />
+
+            <hr />
         </Fragment>
     )
 }

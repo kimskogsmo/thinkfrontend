@@ -120,34 +120,34 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ "./src/pages/learn/Learn.jsx":
 /*!***********************************!*\
-  !*** ./src/pages/learn/Learn.jsx ***!
+  !*** ./src/pages/learn/RoadmapList.jsx ***!
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Learn)\n/* harmony export */ });\n/* harmony import */ var preact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! preact */ \"./node_modules/preact/dist/preact.module.js\");\n/* harmony import */ var _components_roadmap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/roadmap */ \"./src/pages/learn/components/roadmap/index.js\");\n\n\nfunction Learn() {\n  return (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(preact__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"div\", null, (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"h1\", null, \"Learn frontend\"), (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"p\", null, \"Learn how to think frontend! Follow the roadmap below to start learning.\")), (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(_components_roadmap__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n}\n\n//# sourceURL=webpack://thinkfrontend/./src/pages/learn/Learn.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Learn)\n/* harmony export */ });\n/* harmony import */ var preact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! preact */ \"./node_modules/preact/dist/preact.module.js\");\n/* harmony import */ var _components_roadmap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/roadmap-list */ \"./src/pages/learn/components/roadmap-list/index.js\");\n\n\nfunction Learn() {\n  return (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(preact__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"div\", null, (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"h1\", null, \"Learn frontend\"), (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"p\", null, \"Learn how to think frontend! Follow the roadmap-list below to start learning.\")), (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(_components_roadmap__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n}\n\n//# sourceURL=webpack://thinkfrontend/./src/pages/learn/RoadmapList.jsx?");
 
 /***/ }),
 
 /***/ "./src/pages/learn/components/roadmap/Roadmap.jsx":
 /*!********************************************************!*\
-  !*** ./src/pages/learn/components/roadmap/Roadmap.jsx ***!
+  !*** ./src/pages/learn/components/roadmap-list/RoadmapList.jsx ***!
   \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Roadmap)\n/* harmony export */ });\n/* harmony import */ var preact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! preact */ \"./node_modules/preact/dist/preact.module.js\");\n\nvar article = {\n  from: null,\n  leadsTo: null,\n  name: 'Internet',\n  resources: [{\n    from: null,\n    leadsTo: null,\n    name: 'How does the internet work????'\n  }, {\n    from: null,\n    leadsTo: null,\n    name: 'What is HTTP?'\n  }, {\n    from: null,\n    leadsTo: null,\n    name: 'Browsers?'\n  }]\n};\n\nfunction Resource(_ref) {\n  var name = _ref.name;\n  return (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"div\", {\n    \"class\": \"resource\"\n  }, name);\n}\n\nfunction Article(_ref2) {\n  var from = _ref2.from,\n      leadsTo = _ref2.leadsTo,\n      name = _ref2.name,\n      resources = _ref2.resources;\n  return (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"div\", {\n    \"class\": \"article\"\n  }, (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"span\", {\n    \"class\": \"name\"\n  }, name), (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"div\", {\n    \"class\": \"resources\"\n  }, resources.map(function (resource) {\n    return (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(Resource, {\n      name: resource.name\n    });\n  })));\n}\n\nfunction Roadmap() {\n  return (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"section\", {\n    \"class\": \"roadmap\"\n  }, (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(Article, {\n    from: article.from,\n    leadsTo: article.leadsTo,\n    name: article.name,\n    resources: article.resources\n  }));\n}\n\n//# sourceURL=webpack://thinkfrontend/./src/pages/learn/components/roadmap/Roadmap.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Roadmap)\n/* harmony export */ });\n/* harmony import */ var preact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! preact */ \"./node_modules/preact/dist/preact.module.js\");\n\nvar article = {\n  from: null,\n  leadsTo: null,\n  name: 'Internet',\n  resources: [{\n    from: null,\n    leadsTo: null,\n    name: 'How does the internet work????'\n  }, {\n    from: null,\n    leadsTo: null,\n    name: 'What is HTTP?'\n  }, {\n    from: null,\n    leadsTo: null,\n    name: 'Browsers?'\n  }]\n};\n\nfunction Resource(_ref) {\n  var name = _ref.name;\n  return (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"div\", {\n    \"class\": \"resource\"\n  }, name);\n}\n\nfunction Article(_ref2) {\n  var from = _ref2.from,\n      leadsTo = _ref2.leadsTo,\n      name = _ref2.name,\n      resources = _ref2.resources;\n  return (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"div\", {\n    \"class\": \"article\"\n  }, (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"span\", {\n    \"class\": \"name\"\n  }, name), (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"div\", {\n    \"class\": \"resources\"\n  }, resources.map(function (resource) {\n    return (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(Resource, {\n      name: resource.name\n    });\n  })));\n}\n\nfunction Roadmap() {\n  return (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(\"section\", {\n    \"class\": \"roadmap-list\"\n  }, (0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(Article, {\n    from: article.from,\n    leadsTo: article.leadsTo,\n    name: article.name,\n    resources: article.resources\n  }));\n}\n\n//# sourceURL=webpack://thinkfrontend/./src/pages/learn/components/roadmap-list/RoadmapList.jsx?");
 
 /***/ }),
 
 /***/ "./src/pages/learn/components/roadmap/index.js":
 /*!*****************************************************!*\
-  !*** ./src/pages/learn/components/roadmap/index.js ***!
+  !*** ./src/pages/learn/components/roadmap-list/index.js ***!
   \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _Roadmap_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Roadmap.jsx */ \"./src/pages/learn/components/roadmap/Roadmap.jsx\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Roadmap_jsx__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n//# sourceURL=webpack://thinkfrontend/./src/pages/learn/components/roadmap/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _Roadmap_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RoadmapList.jsx */ \"./src/pages/learn/components/roadmap-list/RoadmapList.jsx\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Roadmap_jsx__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n//# sourceURL=webpack://thinkfrontend/./src/pages/learn/components/roadmap-list/index.js?");
 
 /***/ }),
 
@@ -158,7 +158,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _Learn_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Learn.jsx */ \"./src/pages/learn/Learn.jsx\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Learn_jsx__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n//# sourceURL=webpack://thinkfrontend/./src/pages/learn/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _Learn_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RoadmapList.jsx */ \"./src/pages/learn/RoadmapList.jsx\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Learn_jsx__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n//# sourceURL=webpack://thinkfrontend/./src/pages/learn/index.js?");
 
 /***/ }),
 
