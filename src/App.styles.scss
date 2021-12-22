@@ -1,14 +1,4 @@
-:root {
-    --header-height: 100px;
-    --header-color: black;
-}
-
-// Global imports
-@import './style/_reset.scss';
-@import './style/_font-face.scss';
-@import './style/_base.scss';
-
-/* krub-300 - latin */
+// Load webfonts
 @font-face {
     font-family: 'Krub';
     font-style: normal;
@@ -17,7 +7,6 @@
     url('./assets/fonts/krub-v4-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./assets/fonts/krub-v4-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* krub-regular - latin */
 @font-face {
     font-family: 'Krub';
     font-style: normal;
@@ -26,7 +15,6 @@
     url('./assets/fonts/krub-v4-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('./assets/fonts/krub-v4-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* krub-700 - latin */
 @font-face {
     font-family: 'Krub';
     font-style: normal;
@@ -36,10 +24,37 @@
     url('./assets/fonts/krub-v4-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-html,
-body {
-    font-family: 'Open Sans', sans-serif;
+// Global imports
+@import './style/_reset.scss';
+@import './style/_base.scss';
+
+
+// Root
+html {
+    &, body {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+        overflow-y: scroll;
+
+        * {
+            user-select: none;
+        }
+
+        p {
+            user-select: none;
+        }
+
+        .--selectable {
+            &::selection {
+                background: rgba(255,255,200,0.33);
+            }
+        }
+    }
 }
+
+
 
 .dev-notice {
     background: rgba(0,0,0,.175);

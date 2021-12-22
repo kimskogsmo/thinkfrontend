@@ -8,7 +8,9 @@ export default function Footer() {
 
     return (
         <footer style="color: white">
-            {version}
+            <div class={"container"}>
+                <span>&copy; 2021-2022 thinkfrontend</span>
+            </div>
         </footer>
     )
 }

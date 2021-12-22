@@ -1,6 +1,13 @@
 footer {
-    background: var(--header-color);
-    height: var(--header-height);
     margin-top: auto;
-    
+    background: var(--secondary);
+
+    .container {
+        padding: 0.618rem 1rem;
+
+        span {
+            font-size: 0.618rem;
+            color: white;
+        }
+    }
 }
