@@ -1,0 +1,70 @@
+{
+  "info": {
+    "version": "0.0.1",
+    "name": "thinkfrontend"
+  },
+  "resources": [
+    {
+      "id": 1,
+      "url": "https://lmgtfy.com/q?=Flexbox",
+      "title": "Read this article about CSS Flexbox"
+    },
+    {
+      "id": 2,
+      "url": "https://lmgtfy.com/q?=javascript.info",
+      "title": "Read everything on this site explaining what is JS???"
+    }
+  ],
+  "roadmaps": [
+    {
+      "id": 1,
+      "name": "Software Engineering",
+      "slug": "software-engineering",
+      "children": [2,3]
+    },
+    {
+      "id": 2,
+      "name": "Think Frontend",
+      "slug": "think-frontend",
+      "children": [4,5]
+    },
+    {
+      "id": 3,
+      "name": "Backend 101",
+      "slug": "backend-101",
+      "children": [6]
+    },
+    {
+      "id": 4,
+      "name": "Languages of the Web",
+      "slug": "languages-of-the-web",
+      "children": []
+    },
+    {
+      "id": 5,
+      "name": "SEO",
+      "slug": "seo",
+      "children": []
+    },
+    {
+      "id": 6,
+      "name": "Servers & Architecture",
+      "slug": "servers-and-architecture",
+      "children": []
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Kim",
+      "handle": "@kimskogsmo",
+      "started": [
+        {
+          "roadmapId": 1,
+          "completedTasks": []
+        }
+      ],
+      "completed": []
+    }
+  ]
+}

@@ -62,7 +62,7 @@ my-app/
   package.json
   src/
     App.css
-    App.js
+    App.jsx
     index.css
     index.js
     logo.svg
@@ -201,7 +201,7 @@ We suggest that you stick to using default imports and exports when a module onl
 
 Named exports are useful for utility modules that export several functions. A module may have at most one default export and as many named exports as you like.
 
-Learn more about ES6 modules:
+Profile more about ES6 modules:
 
 * [When to use the curly braces?](http://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281)
 * [Exploring ES6: Modules](http://exploringjs.com/es6/ch_modules.html)
@@ -326,13 +326,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 ```
 
-Import required React Bootstrap components within ```src/App.js``` file or your custom component files:
+Import required React Bootstrap components within ```src/App.jsx``` file or your custom component files:
 
 ```js
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 ```
 
-Now you are ready to use the imported React Bootstrap components within your component hierarchy defined in the render method. Here is an example [`App.js`](https://gist.githubusercontent.com/gaearon/85d8c067f6af1e56277c82d19fd4da7b/raw/6158dd991b67284e9fc8d70b9d973efe87659d72/App.js) redone using React Bootstrap.
+Now you are ready to use the imported React Bootstrap components within your component hierarchy defined in the render method. Here is an example [`App.jsx`](https://gist.githubusercontent.com/gaearon/85d8c067f6af1e56277c82d19fd4da7b/raw/6158dd991b67284e9fc8d70b9d973efe87659d72/App.js) redone using React Bootstrap.
 
 ## Adding Flow
 
@@ -349,11 +349,11 @@ node_modules/fbjs/lib/shallowEqual.js.flow:29
  29:     return x !== 0 || 1 / (x: $FlowIssue) === 1 / (y: $FlowIssue);
                                    ^^^^^^^^^^ identifier `$FlowIssue`. Could not resolve name
 
-src/App.js:3
+src/App.jsx:3
   3: import logo from './logo.svg';
                       ^^^^^^^^^^^^ ./logo.svg. Required module not found
 
-src/App.js:4
+src/App.jsx:4
   4: import './App.css';
             ^^^^^^^^^^^ ./App.css. Required module not found
 

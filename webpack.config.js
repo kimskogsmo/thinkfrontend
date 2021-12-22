@@ -3,6 +3,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackModules = require('webpack-modules');
+const GoogleFontsPlugin = require('google-fonts-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -28,6 +29,7 @@ const config = {
         static: {
             directory: path.join(__dirname, 'public'),
         },
+        historyApiFallback: true,
         compress: true,
         port: 9000,
     },
@@ -35,7 +37,7 @@ const config = {
         new MiniCssExtractPlugin(),
         new WebpackModules(),
         // Add your plugins here
-        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+        // Profile more about plugins from https://webpack.js.org/configuration/plugins/
     ],
     module: {
         rules: [
@@ -47,14 +49,23 @@ const config = {
                 test: /\.s[ac]ss$/i,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             },
-
             {
-                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+                test: /\.(ttf|eot|woff|woff2|svg)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'
+                    },
+                },
+            },
+            {
+                test: /\.(eot|svg|ttf|png|jpg|gif)$/i,
                 type: 'asset',
             },
 
             // Add your rules for custom modules here
-            // Learn more about loaders from https://webpack.js.org/loaders/
+            // Profile more about loaders from https://webpack.js.org/loaders/
         ],
     },
 };

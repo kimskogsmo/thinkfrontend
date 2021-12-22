@@ -1,0 +1,15 @@
+header {
+  margin: 3rem 0;
+
+  h1 {
+    font-size: 2.618rem;
+  }
+
+  &.--jumbo {
+    margin: 5rem 0;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+}

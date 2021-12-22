@@ -5,10 +5,8 @@ import { useState, useEffect } from 'preact/hooks'
 import { database } from '../../firebase'
 import { ref, child, get, onValue, query  } from "firebase/database";
 
-export default function Roadmap({id, slug}) {
+export default function Roadmap({id}) {
     const [roadmap, setRoadmap] = useState(null)
-
-    console.log(`Roadmap.jsx ${id + ' ' + slug}`)
 
     useEffect(() => {
         return onValue(ref(database, '/roadmaps/' + id), (snapshot) => {
