@@ -1,6 +1,7 @@
 import { h } from 'preact'
 import './Header.styles.scss'
 import { useState } from 'preact/hooks'
+import logo from './../logo.svg'
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false)
@@ -13,7 +14,7 @@ export default function Header() {
         <nav>
             <a href="/">
                 <div class="logo">
-                    <span>think<strong><i>dev</i></strong></span>
+                    <span>think<strong><i>frontend</i></strong></span>
                 </div>
             </a>
 

@@ -13,3 +13,14 @@ header {
     }
   }
 }
+
+a[role="button"]{
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: .9rem;
+  line-height: 1;
+}
+
+:root {
+  --font-size: 17px;
+}
