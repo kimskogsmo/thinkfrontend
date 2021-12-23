@@ -27,18 +27,15 @@ export default function Roadmap({id}) {
     return (
         <Fragment>
             {roadmap && (
-                <Fragment>
+                <section className={'--bordered-box'}>
                     <header>
                         {roadmap.name && (<h1>{roadmap.name}</h1>)}
 
                         <p>
-                            Everything about frontend development. Get started with getting to know more about browsers, common tools and some terminology. Move on to the languages of the web and more.
+                            {roadmap.description}
                         </p>
                     </header>
-
-                    <hr />
-                </Fragment>
-                /*<RoadmapTree />*/
+                </section>
             )}
 
             {!roadmap && (<span>loading...</span>)}
