@@ -9,6 +9,7 @@ import './Roadmap.styles.scss'
 
 export default function Roadmap({id}) {
     const [roadmap, setRoadmap] = useState(null)
+    const [children, setChildren] = useState([])
 
     useEffect(() => {
         return onValue(ref(database, '/roadmaps/' + id), (snapshot) => {
@@ -21,13 +22,16 @@ export default function Roadmap({id}) {
     }, [])
 
     useEffect(() => {
-        console.log(`retrieved roadmap`, roadmap)
+        console.log('roadmap',roadmap)
+        if (roadmap) {
+            setChildren(roadmap.children)
+        }
     }, [roadmap])
 
     return (
         <Fragment>
             {roadmap && (
-                <section className={'--bordered-box'}>
+                <section>
                     <header>
                         {roadmap.name && (<h1>{roadmap.name}</h1>)}
 
@@ -35,6 +39,14 @@ export default function Roadmap({id}) {
                             {roadmap.description}
                         </p>
                     </header>
+
+                    <article>
+                        {children && children.length && (
+                            <ul>
+                                {roadmap.children.map(c => (c.id))}
+                            </ul>
+                        )}
+                    </article>
                 </section>
             )}
 
