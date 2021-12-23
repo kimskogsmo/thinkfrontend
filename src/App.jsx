@@ -19,6 +19,9 @@ import Home from './pages/home/Home.jsx'
 // Styles
 import './App.styles.scss';
 import Profile from "./pages/profile";
+import  {createBrowserHistory } from 'history';
+
+import { createHashHistory } from "history";
 
 // Default to home URL for bad requests, no need for separate file for this component
 function Default() {
@@ -51,16 +54,18 @@ function App() {
         <Fragment>
             <Header />
 
-            <main class={"container"}>
-                <Router>
-                    <Home path="/" />
-                    <About path="/about" />
-                    <Profile path="/profile" />
-                    <Learn path="/learn" roadmaps={roadmaps} />
-                    <Roadmap path="/roadmap/:id" />
+            <main>
+                <section class={'container'}>
+                    <Router history={createHashHistory()}>
+                        <Home path="/" />
+                        <About path="/about" />
+                        <Profile path="/profile" />
+                        <Learn path="/learn" roadmaps={roadmaps} />
+                        <Roadmap path="/roadmap/:id" />
 
-                    <Default default />
-                </Router>
+                        <Default default />
+                    </Router>
+                </section>
             </main>
 
             <Footer />

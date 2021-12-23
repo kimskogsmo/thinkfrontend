@@ -39,74 +39,62 @@ html {
 
         * {
             user-select: none;
-        }
+            font-family: 'Krub', sans-serif;
 
-        p {
-            user-select: none;
-        }
-
-        .--selectable {
             &::selection {
-                background: rgba(255,255,200,0.33);
+                background: rgba(176, 64, 64, 0.352);
+            }
+        }
+
+        #root {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+
+            .App-logo {
+                animation: App-logo-spin infinite 20s linear;
+                height: 80px;
+            }
+
+            .App-header {
+                background-color: #222;
+                height: 150px;
+                padding: 20px;
+                color: white;
+            }
+
+            .App-intro {
+                font-size: large;
             }
         }
     }
-}
 
-footer {
-    margin-top: auto;
-    background: rgba(0,0,0,.65);
-    padding: 1.618rem;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
-
-    @media screen and (max-width: 1024px) {
-        right: 0;
-        bottom: 0;
+    main {
+        position: relative;
     }
 
-    p,a {
-        font-family: monospace;
-        font-size: 0.8rem;
-        margin: 0;
-    }
-}
+    footer {
+        margin-top: auto;
+        background: rgba(0,0,0,.65);
+        padding: 1.618rem;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
 
-* {
-    // user-select: none;
-    font-family: 'Krub', sans-serif;
-    font-weight: 300;
-    font-size: .8rem;
+        @media screen and (max-width: 1024px) {
+            right: 0;
+            bottom: 0;
+        }
 
-    &::selection {
-        background: rgba(176, 64, 64, 0.352);
-    }
-}
-
-#root {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-        height: 80px;
-    }
-
-    .App-header {
-        background-color: #222;
-        height: 150px;
-        padding: 20px;
-        color: white;
-    }
-
-    .App-intro {
-        font-size: large;
+        p,a {
+            font-family: monospace;
+            font-size: 0.8rem;
+            margin: 0;
+        }
     }
 }
 
@@ -116,5 +104,11 @@ footer {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+.--selectable {
+    &::selection {
+        background: rgba(255,255,200,0.33);
     }
 }

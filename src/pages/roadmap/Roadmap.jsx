@@ -5,6 +5,8 @@ import { useState, useEffect } from 'preact/hooks'
 import { database } from '../../firebase'
 import { ref, child, get, onValue, query  } from "firebase/database";
 
+import './Roadmap.styles.scss'
+
 export default function Roadmap({id}) {
     const [roadmap, setRoadmap] = useState(null)
 
@@ -25,19 +27,36 @@ export default function Roadmap({id}) {
     return (
         <Fragment>
             {roadmap && (
-                <header>
-                    {roadmap.name && (<h1>{roadmap.name}</h1>)}
+                <Fragment>
+                    <header>
+                        {roadmap.name && (<h1>{roadmap.name}</h1>)}
 
-                    <p>
-                        Everything about frontend development. Get started with getting to know more about browsers, common tools and some terminology. Move on to the languages of the web and more.
-                    </p>
-                </header>
+                        <p>
+                            Everything about frontend development. Get started with getting to know more about browsers, common tools and some terminology. Move on to the languages of the web and more.
+                        </p>
+                    </header>
 
+                    <hr />
+                </Fragment>
                 /*<RoadmapTree />*/
             )}
 
             {!roadmap && (<span>loading...</span>)}
 
+            <button
+                className={'back-button'}
+                onClick={() => history.back()}
+                style={`
+                    width: max-content;
+                    position: absolute;
+                    top: 0rem;
+                    left: 0rem;
+                    background: rgba(255,255,255,0.075);
+                    background: transparent; 
+                    border: none;
+                `}>
+                ⟵ Go back
+            </button>
         </Fragment>
     )
 }

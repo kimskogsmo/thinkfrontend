@@ -3,7 +3,7 @@ import { useEffect, useState } from 'preact/hooks'
 
 import "./Footer.styles.scss"
 
-export default function Footer() {
+export default function FooterComponent() {
     const [version, setVersion] = useState('...')
 
     return (

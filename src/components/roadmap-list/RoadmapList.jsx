@@ -10,11 +10,14 @@ function Article({ id, slug, from, leadsTo, name, resources = [] }) {
     const [articleOpen, setArticleOpen] = useState(false);
 
     const handleOpenArticle = () => {
-        setArticleOpen(a => a = !a);
+        setArticleOpen(!!articleOpen);
     };
 
     return (
-        <a role={"button"} href={`/roadmap/${id}`} data-tooltip={"coming soon..."} aria-disabled={true}>
+        <a role={"button"}
+           href={`/roadmap/${id - 1}`}
+           data-tooltip={"coming soon..."}
+           aria-disabled={true}>
             {name}
 
             {/*(resources && resources.length) && (
@@ -26,7 +29,7 @@ function Article({ id, slug, from, leadsTo, name, resources = [] }) {
             )*/}
 
             {articleOpen && (
-                <div class="detailed">
+                <div className={'detailed'}>
                     {resources.map((resource) => (
                         <span data-tooltip={"coming soon..."}>{resource.name}</span>
                     ))}

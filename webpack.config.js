@@ -1,11 +1,9 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const WebpackModules = require('webpack-modules');
-const GoogleFontsPlugin = require('google-fonts-webpack-plugin');
-
-const isProduction = process.env.NODE_ENV == 'production';
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const WebpackModules = require('webpack-modules')
+const isProduction = process.env.NODE_ENV === 'production'
 
 const config = {
     entry: './src/index.js',
@@ -39,6 +37,10 @@ const config = {
         // Add your plugins here
         // Profile more about plugins from https://webpack.js.org/configuration/plugins/
     ],
+    optimization: {
+        chunkIds: 'named',
+        minimize: true,
+    },
     module: {
         rules: [
             {
