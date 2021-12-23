@@ -6,7 +6,6 @@ const firebaseConfig = {
     authDomain: "thinkfrontend.firebaseapp.com",
     databaseURL: "https://thinkfrontend-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "thinkfrontend",
-    storageBucket: "thinkfrontend.appspot.com",
     messagingSenderId: "343893954644",
     appId: "1:343893954644:web:dae4bb274f6018c2019dc1",
     measurementId: "G-52LEV0DYV4"

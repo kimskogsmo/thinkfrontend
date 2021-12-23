@@ -25,9 +25,13 @@ export default function Roadmap({id}) {
     return (
         <Fragment>
             {roadmap && (
-                <section>
+                <header>
                     {roadmap.name && (<h1>{roadmap.name}</h1>)}
-                </section>
+
+                    <p>
+                        Everything about frontend development. Get started with getting to know more about browsers, common tools and some terminology. Move on to the languages of the web and more.
+                    </p>
+                </header>
 
                 /*<RoadmapTree />*/
             )}

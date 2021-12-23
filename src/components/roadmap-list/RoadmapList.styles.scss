@@ -15,20 +15,8 @@
 
 a { text-decoration:none }
 
-.roadmap-item {
-    padding: 0.618rem 1rem;
+a[role="button"]{
     border-radius: 2rem;
-    background: #eee;
-    color: black;
-    cursor: pointer;
-
-    span {
-        font-size: 0.75rem;
-        font-weight: 400;
-    }
-
-    &:hover {
-        color: white;
-        background: black;
-    }
+    font-weight: bold;
+    font-size: .9rem;
 }

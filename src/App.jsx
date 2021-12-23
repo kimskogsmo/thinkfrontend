@@ -15,7 +15,6 @@ import Roadmap from './pages/roadmap'
 // Layout (+ load first page first)
 import Header from './layout/Header.jsx'
 import Home from './pages/home/Home.jsx'
-import Footer from './layout/Footer.jsx'
 
 // Styles
 import './App.styles.scss';
@@ -27,11 +26,12 @@ function Default() {
     return route("/")
 }
 
-function DevNotice() {
+function Footer() {
     return (
-        <div className={'dev-notice'}>
-            <p>This site is a bigass WIP. Mail list coming soon. Got questions? Contact me by <a href={"mailto:kim.skogsmo@gmail.com"}>@email</a></p>
-        </div>
+        <footer>
+            <p>This is a WIP. Questions? Contact me by <a href={"mailto:kim.skogsmo@gmail.com"}>@email</a></p>
+            <p>&copy; 2021 thinkfrontend</p>
+        </footer>
     )
 }
 
@@ -64,7 +64,6 @@ function App() {
             </main>
 
             <Footer />
-            <DevNotice />
         </Fragment>
     );
 }

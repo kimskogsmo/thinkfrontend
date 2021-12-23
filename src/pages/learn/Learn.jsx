@@ -1,12 +1,12 @@
 import { h, Fragment } from 'preact'
 import './Learn.styles.scss'
 
-import RoadmapList from './components/roadmap-list'
+import RoadmapList from 'components/roadmap-list'
 
 export default function Learn({
     roadmaps
-  }) {
-    console.log('learn page roadmaps', roadmaps)
+}) {
+    const progress = false;
 
     return (
         <Fragment>
@@ -15,11 +15,15 @@ export default function Learn({
                 <p>Choose a path to get started.</p>
             </header>
 
-            <article>
-                <h3>Latest roadmaps</h3>
-                <p>Check out these community made roadmaps!</p>
-                <RoadmapList roadmaps={roadmaps} />
-            </article>
+            {progress && (
+                // This wont show for now, see const progress = false ^
+                <Fragment>
+                    <h3>Your progress</h3>
+                    <div>Your progress</div>
+                </Fragment>
+            )}
+
+            <RoadmapList roadmaps={roadmaps} />
         </Fragment>
     )
 }

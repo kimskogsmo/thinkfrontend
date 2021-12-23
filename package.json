@@ -24,6 +24,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "firebase": "^9.6.1",
     "firebase-cli": "^1.2.0",
+    "firebase-tools": "^10.0.1",
     "google-fonts-webpack-plugin": "^0.4.4",
     "preact": "^10.6.4",
     "preact-router": "^3.2.1",

@@ -17,6 +17,11 @@ nav {
             font-weight: bold;
             text-decoration: none;
         }
+
+        span, i {
+            font-size: 1rem;
+        }
+
         svg {
             path {
                 fill: rgb(114, 25, 25);
