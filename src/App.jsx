@@ -58,20 +58,14 @@ const withAuth = (initialState) => BaseComponent =>
                 ).then(data => {
                     if (data.user.uid) {
                         this.setState({
-                            loading: false,
                             isAuthenticated: true,
-                            user: data.user,
-                            reloadInfo: data.user.reloadUserInfo,
+                            user: data.user.reloadUserInfo
                         });
                     } else {
                         this.setState(initialState);
                     }
                 })
 
-            }).bind(this);
-
-            this.updateUser = (function (user, userName) {
-                updateProfile(user, userName);
             }).bind(this);
 
             // Bind ...
@@ -88,9 +82,7 @@ const withAuth = (initialState) => BaseComponent =>
                             }).then(() => {
                                 this.setState({
                                     isAuthenticated: true,
-                                    displayName: data.user.displayName,
-                                    uid: data.user.uid,
-                                    reloadUserInfo: data.user.reloadUserInfo,
+                                    user: data.user,
                                 })
                             })
                         });
@@ -108,28 +100,10 @@ const withAuth = (initialState) => BaseComponent =>
 
             // On auth change, set state
             onAuthStateChanged(auth, (user) => {
-                console.log('onAuthStateChanged', user)
-
                 if (user && user.uid) {
-
-                    console.log('###########', user);
-
                     this.setState({
-                        loading: false,
                         isAuthenticated: true,
-                        user: {
-                            uid: user.uid,
-                            reloadInfo: user.reloadUserInfo,
-                            displayName: user.displayName || user.email || 'user',
-                        },
-                    })
-                }
-
-                if (user.displayName) {
-                    this.setState({
-                        user: {
-                            displayName: user.displayName
-                        }
+                        user: user.reloadUserInfo
                     })
                 }
             })
