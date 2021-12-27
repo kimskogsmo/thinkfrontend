@@ -1,41 +1,19 @@
 import { h, Fragment } from "preact";
 import { useState } from 'preact/hooks'
 import "./RoadmapList.styles.scss";
-
-function Resource({ name }) {
-    return <div class="resource">{name}</div>;
-}
-
-function Article({ id, slug, from, leadsTo, name, resources = [] }) {
-    const [articleOpen, setArticleOpen] = useState(false);
-
-    const handleOpenArticle = () => {
-        setArticleOpen(!!articleOpen);
-    };
-
+import Item from 'components/roadmap/Item.jsx'
+function RoadmapResource ({
+    id,
+    title,
+    slug,
+    description
+}) {
     return (
-        <a role={"button"}
-           href={`/roadmap/${id - 1}`}
-           data-tooltip={"coming soon..."}
-           aria-disabled={true}>
-            {name}
-
-            {/*(resources && resources.length) && (
-                <div className="resources">
-                    {resources && resources.map((resource) => (
-                        <Resource name={resource.name} />
-                    ))}
-               </div>
-            )*/}
-
-            {articleOpen && (
-                <div className={'detailed'}>
-                    {resources.map((resource) => (
-                        <span data-tooltip={"coming soon..."}>{resource.name}</span>
-                    ))}
-                </div>
-            )}
-        </a>
+        slug ? (
+            <a href={slug}>
+                {title}
+            </a>
+        ) : <span>{title}</span>
     );
 }
 
@@ -43,9 +21,9 @@ export default function RoadmapList({roadmaps}) {
     return (
         <Fragment>
             {(roadmaps && roadmaps.length) && (
-                <section className="roadmaps">
-                    {roadmaps.map(roadmap => <Article slug={roadmap.slug} id={roadmap.id} name={roadmap.name} />)}
-                </section>
+                <ul className="roadmaps">
+                    {roadmaps.map(roadmap => <Item slug={roadmap.slug} id={roadmap.id} name={roadmap.name} />)}
+                </ul>
             )}
         </Fragment>
     );

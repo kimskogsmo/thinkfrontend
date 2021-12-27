@@ -5,6 +5,9 @@ import { useState, useEffect } from 'preact/hooks'
 import { database } from '../../firebase'
 import { ref, child, get, onValue, query  } from "firebase/database";
 
+// Components
+import RoadmapTree from 'components/roadmap-tree';
+
 import './Roadmap.styles.scss'
 
 export default function Roadmap({id}) {
@@ -14,7 +17,7 @@ export default function Roadmap({id}) {
     useEffect(() => {
         return onValue(ref(database, '/roadmaps/' + id), (snapshot) => {
             if (snapshot.exists()) {
-                setRoadmap(r => r = snapshot.val())
+                setRoadmap(snapshot.val())
             }
         }, {
             onlyOnce: false
@@ -22,7 +25,6 @@ export default function Roadmap({id}) {
     }, [])
 
     useEffect(() => {
-        console.log('roadmap',roadmap)
         if (roadmap) {
             setChildren(roadmap.children)
         }
@@ -31,23 +33,13 @@ export default function Roadmap({id}) {
     return (
         <Fragment>
             {roadmap && (
-                <section>
+                <Fragment>
                     <header>
-                        {roadmap.name && (<h1>{roadmap.name}</h1>)}
-
-                        <p>
-                            {roadmap.description}
-                        </p>
+                        {roadmap.name && <h1>{roadmap.name}</h1>}
+                        {roadmap.description && <p>{roadmap.description}</p>}
                     </header>
-
-                    <article>
-                        {children && children.length && (
-                            <ul>
-                                {roadmap.children.map(c => (c.id))}
-                            </ul>
-                        )}
-                    </article>
-                </section>
+                    <RoadmapTree children={roadmap.children} />
+                </Fragment>
             )}
 
             {!roadmap && (<span>loading...</span>)}
@@ -64,7 +56,11 @@ export default function Roadmap({id}) {
                     background: transparent; 
                     border: none;
                 `}>
-                ⟵ Go back
+
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.295 19.716a1 1 0 0 0 1.404-1.425l-5.37-5.29h13.67a1 1 0 1 0 0-2H6.336L11.7
+                    5.714a1 1 0 0 0-1.404-1.424l-6.924 6.822a1.25 1.25 0 0 0 0 1.78l6.924 6.823Z" fill="#fff"/>
+                </svg>
             </button>
         </Fragment>
     )

@@ -36,6 +36,8 @@ html {
 
     body {
         overflow-y: scroll;
+        overflow-x: hidden;
+        max-width: 100vw;
 
         * {
             user-select: none;
@@ -107,6 +109,10 @@ html {
     }
 }
 
+hr {
+    width: 200vw;
+    transform: translateX(-50vw);
+}
 .--selectable {
     &::selection {
         background: rgba(255,255,200,0.33);

@@ -1,6 +1,9 @@
+// Import firebase modules
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from "firebase/database";
+import { getAuth } from "firebase/auth";
 
+// Config object
 const firebaseConfig = {
     apiKey: "AIzaSyCgmCFjCdmv-MrY-gSPfCUA5CntGEbIQ5Q",
     authDomain: "thinkfrontend.firebaseapp.com",
@@ -11,11 +14,14 @@ const firebaseConfig = {
     measurementId: "G-52LEV0DYV4"
 };
 
+// Init firebase app
 const app = initializeApp(firebaseConfig);
 
 // Get a reference to the database service
 const database = getDatabase(app);
+const auth = getAuth(app);
 
 export {
-    database
+    database,
+    auth
 }

@@ -1,0 +1,27 @@
+.roadmaps {
+    width: 100%;
+    max-width: 800px;
+
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+    margin-bottom: 2rem;
+    background: transparent;
+}
+
+a { text-decoration:none }
+
+a[role="button"]{
+    border-radius: 2rem;
+    font-weight: bold;
+    font-size: .9rem;
+    line-height: 1;
+}
+
+.roadmap-child {
+    cursor: pointer;
+}

@@ -1,3 +1,56 @@
 .back-button {
   font-size: .8rem;
 }
+
+section {
+  header {
+    position: relative;
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+
+    .roadmap-child {
+      padding: .618rem 1rem;
+      font-weight: 300;
+      font-size: 0.85rem;
+      color: white;
+      background: transparent;
+      border: 1px solid var(--blockquote-border-color);
+      position: relative;
+
+      svg {
+        display: block;
+        border-radius: 1rem;
+        position: absolute;
+        background: black;
+        z-index: 10;
+        top: -5px;
+        right: -5px;
+        width: 15px;
+        height: 15px;
+      }
+
+      &:hover {
+        background: rgba(255,255,255,0.075);
+      }
+    }
+  }
+}
+
+.--link-vfx {
+  height: 50px;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: var(--blockquote-border-color);
+  position: absolute;
+  width: 1px;
+  background: var(--blockquote-border-color);
+}
