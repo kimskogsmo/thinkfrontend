@@ -49,10 +49,10 @@ export default function Profile ({
     }
 
     return (
-        <Fragment>
+        <section className={'auth'}>
             {!isAuthenticated && (
                 authArea === 'sign-in' && (
-                    <Fragment>
+                    <div className={'sign-in'}>
                         <h1>Sign In</h1>
                         <p>Kom in i värmen.</p>
 
@@ -62,10 +62,11 @@ export default function Profile ({
                             <button onClick={ () => handleSignIn() }>Sign In</button>
                         </div>
 
-                        <strong style={'margin-top: 2rem'} onClick={() => handleSwitchArea() }>
-                            Sign up instead?
-                        </strong>
-                    </Fragment>
+                        <h5>Don't have an account yet?</h5>
+                        <span className={'secondary-button'} onClick={() => handleSwitchArea() }>
+                            Sign up
+                        </span>
+                    </div>
                 )
             )}
 
@@ -78,12 +79,14 @@ export default function Profile ({
                             <input ref={signUpEmail} type={'email'} name={'email'} placeholder={'Your email'}/>
                             <input ref={signUpUsername} type={'text'} name={'username'} placeholder={'Desired username'}/>
                             <input ref={signUpPassword} type={'password'} name={'password'} placeholder={'Password'}/>
+
                             <button onClick={ () => handleSignUp() }>Sign me up!</button>
                         </div>
 
-                        <strong style={'margin-top: 2rem'} onClick={() => handleSwitchArea() }>
-                            Already have an account?
-                        </strong>
+                        <h5>Already have an account?</h5>
+                        <span className={'secondary-button'} onClick={() => handleSwitchArea() }>
+                            Sign In
+                        </span>
                     </Fragment>
                 )
             )}
@@ -129,6 +132,6 @@ export default function Profile ({
                     }>Sign out</strong>
                 </Fragment>
             )}
-        </Fragment>
+        </section>
     )
 }

@@ -49,8 +49,6 @@ const withAuth = (initialState) => BaseComponent =>
 
             // Bind to the withAuth this context
             this.signIn = (function(email, password) {
-                let data;
-
                 signInWithEmailAndPassword(
                     auth,
                     email,
