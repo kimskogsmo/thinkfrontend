@@ -1,5 +1,26 @@
 input { text-align: center; }
 
+.profile {
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.email-verification-notice {
+  background: rgba(255,255,255,0.07);
+  padding: 0.2rem;
+  width: 90vw;
+  position: fixed;
+  left: 5vw;
+  bottom: 5vw;
+  font-size: 0.7rem;
+  display: none;
+}
+
+
+
 .secondary-button {
   display: block;
   font-weight: bold;

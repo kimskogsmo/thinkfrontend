@@ -4,17 +4,17 @@ import "./RoadmapTree.styles.scss";
 import Item from 'components/roadmap/Item.jsx'
 
 function RoadmapTreeItem ({
-    name,
+    title,
     tooltip,
     disabled
 }) {
     return (
-        <div className={'roadmap--tree-item roadmap-child'}>{name}</div>
+        <div className={'roadmap--tree-item roadmap-child'}>{title}</div>
     )
 }
 
 export default function RoadmapTree({
-    id, name, slug, children, resources
+    id, title, slug, children, resources
 }) {
     const [highlightedItem, setHighlightedItem] = useState(null)
     return (
@@ -24,7 +24,7 @@ export default function RoadmapTree({
                     {children.map(roadmap => {
                         return (
                             <Item
-                                name={roadmap.name}
+                                title={roadmap.title}
                             />
                         )
                     })}

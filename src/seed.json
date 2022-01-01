@@ -15,72 +15,53 @@
       "title": "Read everything on this site explaining what is JS???"
     }
   ],
-  "roadmaps": [
+  "tasks": [
     {
-      "id": 1,
-      "name": "Software Engineering",
-      "slug": "software-engineering",
-      "description": "Just getting started with software engineering? Then this roadmap is maybe for you.",
-      "children": [
-        {
-          "id": 2,
-          "name": "Think Frontend",
-          "slug": "think-frontend"
-        },{
-          "id": 3,
-          "name": "Backend 101",
-          "slug": "backend-101"
-        }]
+      "id": "a85fd548-b4fc-4f60-83dc-5b84e6a2b0f0-a",
+      "title": "HTML",
+      "description": "Read about HTML",
+      "main": [
+        "a85fd548-b4fc-4f60-83dc-5b84e6a2b0f0"
+      ],
+      "optional": [
+        "a85fd548-b4fc-4f60-83dc-5b84e6a2b0f0"
+      ]
     },
     {
-      "id": 2,
-      "name": "Think Frontend",
-      "slug": "think-frontend",
-      "description": "Everything about frontend development. Get started with getting to know more about browsers, common tools and some terminology. Move on to the languages of the web and more.",
-      "children": [{
-        "id": 4,
-        "name": "Languages of the Web",
-        "slug": "languages-of-the-web"
-      },{
-        "id": 5,
-        "name": "SEO",
-        "slug": "seo"
-      }]
-    },
-    {
-      "id": 3,
-      "name": "Backend 101",
-      "slug": "backend-101",
-      "description": "How data is saved, common backend design patterns, severs, and more.",
-      "children": [
-        {
-          "id": 6,
-          "name": "Head-first DevOps",
-          "slug": "head-first-devops"
-        }]
-    },
-    {
-      "id": 4,
-      "name": "Languages of the Web",
-      "slug": "languages-of-the-web",
-      "description": "The big three languages that power most of the internet. HTML, CSS and JavaScript. Take a deep dive in this roadmap.",
-      "children": []
-    },
-    {
-      "id": 5,
-      "name": "SEO",
-      "slug": "seo",
-      "description": "What good would websites be if no one could ever find them? In this roadmap, we explore how users can find what they are looking for on the WWW.",
-      "children": []
-    },
-    {
-      "id": 6,
-      "name": "Head-first DevOps",
-      "slug": "head-first-devops",
-      "description": "More on what is commonly known as DevOps. A job role that is a mix of development & IT-operations.",
-      "children": []
+      "id": "a85fd548-b4fc-4f60-83dc-5b84e6a2b0f0-b",
+      "title": "CSS",
+      "description": "Read about CSS",
+      "main": [
+        "a85fd548-b4fc-4f60-83dc-5b84e6a2b0f0"
+      ],
+      "optional": [
+        "a85fd548-b4fc-4f60-83dc-5b84e6a2b0f0"
+      ]
     }
   ],
+  "roadmaps": {
+    "think-frontend": {
+      "metrics": {
+        "views" : 1,
+        "likes" : 1,
+        "shares": 1
+      },
+      "slug": "think-frontend",
+      "title": "Think Frontend",
+      "description": "Everything about frontend development. Get started with getting to know more about browsers, common tools and some terminology. Move on to the languages of the web and more."
+
+    },
+    "backend-101": {
+      "metrics": {
+        "views" : 2,
+        "likes" : 4,
+        "shares": 1
+      },
+      "title": "Backend 101",
+      "slug": "backend-101",
+      "description": "How data is saved, common backend design patterns, servers, and more."
+    }
+  },
   "users": [
     {
       "id": 1,

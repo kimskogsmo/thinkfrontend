@@ -10,14 +10,23 @@ import RoadmapTree from 'components/roadmap-tree';
 
 import './Roadmap.styles.scss'
 
-export default function Roadmap({id}) {
+export default function Roadmap({slug}) {
+    console.log('slug is', slug);
     const [roadmap, setRoadmap] = useState(null)
-    const [children, setChildren] = useState([])
 
     useEffect(() => {
-        return onValue(ref(database, '/roadmaps/' + id), (snapshot) => {
+        onValue(ref(database, '/roadmaps/' + slug), (snapshot) => {
             if (snapshot.exists()) {
+                const t = snapshot.val()
+
+                console.log('t', t)
                 setRoadmap(snapshot.val())
+                snapshot.forEach(child => {
+                    const k = child.key
+                    const v = child.val()
+
+                    console.log(k,v)
+                })
             }
         }, {
             onlyOnce: false
@@ -25,9 +34,7 @@ export default function Roadmap({id}) {
     }, [])
 
     useEffect(() => {
-        if (roadmap) {
-            setChildren(roadmap.children)
-        }
+        console.log('ue', roadmap);
     }, [roadmap])
 
     return (
@@ -35,7 +42,7 @@ export default function Roadmap({id}) {
             {roadmap && (
                 <Fragment>
                     <header>
-                        {roadmap.name && <h1>{roadmap.name}</h1>}
+                        {roadmap.title && <h1>{roadmap.title}</h1>}
                         {roadmap.description && <p>{roadmap.description}</p>}
                     </header>
                     <RoadmapTree children={roadmap.children} />

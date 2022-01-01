@@ -9,6 +9,8 @@ export default function Profile ({
  }) {
     const [authArea, setAuthArea] = useState('sign-in')
 
+    console.log(props);
+
     const email = useRef(null)
     const password = useRef(null)
 
@@ -50,11 +52,17 @@ export default function Profile ({
 
     return (
         <section className={'auth'}>
+            {(props.user && !props.user.emailVerified && (
+                <section className={'email-verification-notice'}>
+                    <span>why u no verify?</span>
+                </section>
+            ))}
+
             {!isAuthenticated && (
                 authArea === 'sign-in' && (
                     <div className={'sign-in'}>
                         <h1>Sign In</h1>
-                        <p>Kom in i värmen.</p>
+                        <p>Get back on track.</p>
 
                         <div className={"card"}>
                             <input ref={email} type={'email'} placeholder={'Your email'}/>
@@ -98,8 +106,27 @@ export default function Profile ({
                         <p>Track your amazing progress, create and update roadmaps, and challenge your friends from here.</p>
                     </header>
 
+                    <article className={'profile'}>
+                        <header>
+                            <h3>Your details</h3>
+                        </header>
+
+                        <div className={'card'}>
+                            <div>
+                                <strong>Email:</strong><span>{props.user && (props.user.email)}</span>
+                            </div>
+                            <div>
+                                <strong>Username:</strong><span>{props.user && (props.user.displayName)}</span>
+                            </div>
+                            <div>
+                                <strong>Verified:</strong><span>{props.user.emailVerified === true ? 'Email verified' : 'Email not verified'}</span>
+                            </div>
+                        </div>
+                    </article>
+
                     <article>
                         <h2>Stats</h2>
+
                         <div className={'stats'}>
                             <p>If you had any stats, you would get stats!</p>
                         </div>
@@ -108,6 +135,7 @@ export default function Profile ({
                     <article>
                         <h2>Your roadmaps</h2>
                         <p>No roadmaps yet... bah!</p>
+
                         <a href={"/create-roadmap"}>
                             <button>Create one?</button>
                         </a>
@@ -116,14 +144,10 @@ export default function Profile ({
                     <article>
                         <h2>Challenges</h2>
                         <p>You haven't submitted or received any challenges yet...</p>
+
                         <a href={"/challenge-friend"}>
                             <button>Challenge someone now!</button>
                         </a>
-                    </article>
-
-                    <article>
-                        <h3>Your details</h3>
-                        <p>Coming soon</p>
                     </article>
 
                     <strong

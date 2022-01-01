@@ -54,6 +54,12 @@ html {
             flex-direction: column;
             height: 100vh;
 
+            .master {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
             .App-logo {
                 animation: App-logo-spin infinite 20s linear;
                 height: 80px;
