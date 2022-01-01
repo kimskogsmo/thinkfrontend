@@ -72,17 +72,16 @@ const withAuth = (initialState) => BaseComponent =>
                     email,
                     password
                 ).then(data => {
-                    ifValue(data.user.uid,
-                        () => {
-                            updateProfile(data.user, {
-                                displayName: displayName
-                            }).then(() => {
-                                this.setState({
-                                    isAuthenticated: true,
-                                    user: data.user,
-                                })
+                    ifValue (data.user.uid, () => {
+                        updateProfile(data.user, {
+                            displayName: displayName
+                        }).then(() => {
+                            this.setState({
+                                isAuthenticated: true,
+                                user: data.user,
                             })
-                        });
+                        })
+                    });
 
                     localStorage.setItem('user', data.user.reloadUserInfo);
                 })
